@@ -29,7 +29,7 @@ This project has a hierarchical design structure:
     - **`MAC_table`** (submodule): MAC table memory and management logic
     - **`extract_MAC`** (submodule): MAC address extraction from valid frames
 
-**For the first phase of verification, the testbench instantiates `control_MAC_learning` as the top hierarchy.** This allows you to thoroughly verify the core controller logic, frame processing, and MAC extraction before integrating into the full `MAC_learning` module. The test file `test/test.py` contains cocotb test cases that drive the testbench and verify:
+**For the first phase of verification, the testbench instantiates `control_MAC_learning` as the top hierarchy, instantiate the two submodules MAC_table and extract_MAC.** This allows you to thoroughly verify the core controller logic, frame processing, and MAC extraction before integrating into the full `MAC_learning` module. Your test file `test/test.py` must contain cocotb test cases that drive the testbench and verify:
 - Frame processing and MAC extraction logic
 - MAC table state transitions
 - Proper output of MAC addresses and table status
